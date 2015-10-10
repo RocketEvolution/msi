@@ -1,0 +1,39 @@
+$cream: #e5ba85;
+$darkcream: #e0a55b;
+$darkercream: #c9822b;
+
+
+// PLACEHOLDER
+%nospace {
+	padding: 0px;
+	margin: 0px auto;
+}
+
+
+
+// MIXIN
+@mixin clearspace() {
+	padding: 0px;
+	margin: 0px;
+}
+@mixin shadow($depth: 0 0 10px 1px, $alpha: 0.2) {
+	box-shadow: $depth rgba(#000, $alpha);
+	-o-box-shadow: $depth rgba(#000, $alpha);
+	-ms-box-shadow: $depth rgba(#000, $alpha);
+	-moz-box-shadow: $depth rgba(#000, $alpha);
+	-webkit-box-shadow: $depth rgba(#000, $alpha);
+}
+@mixin round($radius: 10px) {
+	border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+@mixin transition($duration: 300ms) {
+	transition: all $duration ease;
+	-o-transition: all $duration ease;
+	-ms-transition: all $duration ease;
+	-moz-transition: all $duration ease;
+	-webkit-transition: all $duration ease;
+}

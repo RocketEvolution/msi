@@ -1,0 +1,223 @@
+@import 'inc.scss';
+
+
+
+
+// PRESETS
+.round-circle { @include round(50%); }
+.round-lg { @include round(20px); }
+.round-md { @include round(15px); }
+.round-sm { @include round(10px); }
+.round-xs { @include round(5px); }
+
+// GLOBAL
+body {
+	@extend %nospace;
+	background: $cream;
+	background-attachment: fixed;
+	overflow-x: hidden;
+	font-size: 15px;
+	line-height: 27px;
+}
+a {
+	@include transition();
+	color: #F00;
+	&:hover { text-decoration: none; color: $darkercream; }
+	&:-webkit-any-link { text-decoration: none; }
+}
+h1, h2, h3, h4, h5, h6 { @extend %nospace; }
+h1 { font-size: 1.8em; line-height: 1.35em; }
+h2 { font-size: 1.5em; line-height: 1.15em; }
+h3 { font-size: 1.3em; line-height: 1.05em; }
+h4 { font-size: 1.1em; line-height: 1em; }
+
+
+
+// LOGO
+.logo {
+	padding: 50px 0px;
+	img {
+		margin: auto;
+		max-width: 300px;
+	}
+}
+
+
+
+// RESPONSIVE MENU
+.responsivemenu {
+	@include transition();
+	height: 0px;
+	overflow: hidden;
+	ul {
+		@extend %nospace;
+		list-style: none;
+		padding: 0px 20px;
+		text-align: center;
+		li {
+			a {
+				display: block;
+				color: #FFF;
+				background: $darkcream;
+				padding: 7px 0px;
+				margin-bottom: 2px;
+				&:hover {
+					color: $darkcream;
+					background: #FFF;
+				}
+			}
+		}
+	}
+}
+.responsivemenu.show {
+	height: 130px;
+}
+
+
+
+// MENU
+$menu-height: 55px;
+$socialmedia-dimension: 40px;
+.menu {
+	text-align: center;
+	margin-bottom: 20px;
+	ul {
+		@extend %nospace;
+		@include round(15px);
+		list-style: none;
+		font-size: 0;
+		background: $darkcream;
+		max-width: 500px;
+		li {
+			font-size: 16px;
+			display: inline-block;
+			a {
+				display: block;
+				color: #FFF;
+				height: $menu-height;
+				line-height: $menu-height;
+				padding: 0px 25px;
+				&:hover {
+					background: #FFF;
+					color: $darkercream;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+.responsivebutton {
+	background: $darkcream;
+	color: #FFF;
+	border: none;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+}
+.socialmedia {
+	text-align: center;
+	margin-bottom: 20px;
+	ul {
+		@extend %nospace;
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				color: #FFF;
+				font-size: 1.2em;
+				width: $socialmedia-dimension;
+				height: $socialmedia-dimension;
+				line-height: $socialmedia-dimension + 2;
+				&.fa-facebook { background: #009cff; &:hover { background: #FFF; color: #009cff; } }
+				&.fa-twitter { background: #54bfff; &:hover { background: #FFF; color: #54bfff; } }
+				&.fa-pinterest { background: #cf2929; &:hover { background: #FFF; color: #cf2929; } }
+			}
+		}
+	}
+}
+
+
+
+
+// CONTENT
+.content-section {
+	margin-top: 85px;
+	max-width: 880px;
+}
+
+
+
+
+// FOOTER
+.footer {
+	margin-top: 85px;
+	padding: 35px;
+	background: $darkcream;
+	color: #FFF;
+	line-height: 22px;
+	img {
+		margin: auto;
+		max-width: 200px;
+		width: 100%;
+	}
+	input[type="text"] {
+		color: $darkercream;
+		width: 100%;
+		border: solid 1px $darkercream;
+		font-size: 0.8em;
+		padding: 5px;
+	}
+	textarea {
+		color: $darkercream;
+		width: 100%;
+		font-family: Arial;
+		border: solid 1px $darkercream;
+		font-size: 0.8em;
+		padding: 5px;
+		height: 80px;
+	}
+	input[type="submit"] {
+		border: none;
+		float: right;
+		color: #FFF;
+		background: #F00;
+		padding: 3px 15px;
+		@include transition();
+		font-size: 0.8em;
+		&:hover { background: #F50; }
+	}
+	.footer-socialmedia {
+		@extend %nospace;
+		list-style: none;
+		li a {
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			background: #FFF;
+			text-align: center;
+			margin-bottom: 2px;
+		}
+	}
+}
+
+
+
+
+
+
+// MEDIA QUERY
+@media screen and (max-width: 770px){ 
+	.footer { .footer-socialmedia { li { display: inline-block; } } }
+}
+
+
+
+
+
+// OVERRIDE BOOTSTRAP
+.btn {
+	&.btn-danger {
+		background: #A00;
+		border: none;
+		&:hover { background: #F90; }
+	}
+}
