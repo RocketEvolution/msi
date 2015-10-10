@@ -1,4 +1,4 @@
-@import 'inc.scss';
+@import 'properties.scss';
 
 
 
@@ -10,10 +10,13 @@
 .round-sm { @include round(10px); }
 .round-xs { @include round(5px); }
 
+
+
+
 // GLOBAL
 body {
 	@extend %nospace;
-	background: $cream;
+	background: $lightestgray;
 	background-attachment: fixed;
 	overflow-x: hidden;
 	font-size: 15px;
@@ -22,7 +25,7 @@ body {
 a {
 	@include transition();
 	color: #F00;
-	&:hover { text-decoration: none; color: $darkercream; }
+	&:hover { text-decoration: none; color: $maroon - 30; }
 	&:-webkit-any-link { text-decoration: none; }
 }
 h1, h2, h3, h4, h5, h6 { @extend %nospace; }
@@ -33,14 +36,16 @@ h4 { font-size: 1.1em; line-height: 1em; }
 
 
 
+
 // LOGO
 .logo {
 	padding: 50px 0px;
 	img {
 		margin: auto;
-		max-width: 300px;
+		max-width: 275px;
 	}
 }
+
 
 
 
@@ -58,11 +63,11 @@ h4 { font-size: 1.1em; line-height: 1em; }
 			a {
 				display: block;
 				color: #FFF;
-				background: $darkcream;
+				background: $darkergray;
 				padding: 7px 0px;
 				margin-bottom: 2px;
 				&:hover {
-					color: $darkcream;
+					color: $darkergray;
 					background: #FFF;
 				}
 			}
@@ -75,18 +80,18 @@ h4 { font-size: 1.1em; line-height: 1em; }
 
 
 
+
 // MENU
 $menu-height: 55px;
 $socialmedia-dimension: 40px;
 .menu {
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	ul {
 		@extend %nospace;
-		@include round(15px);
 		list-style: none;
 		font-size: 0;
-		background: $darkcream;
+		background: $darkgray;
 		max-width: 500px;
 		li {
 			font-size: 16px;
@@ -98,8 +103,9 @@ $socialmedia-dimension: 40px;
 				line-height: $menu-height;
 				padding: 0px 25px;
 				&:hover {
+					padding: 0px 30px;
 					background: #FFF;
-					color: $darkercream;
+					color: $maroon;
 					text-decoration: none;
 				}
 			}
@@ -107,10 +113,10 @@ $socialmedia-dimension: 40px;
 	}
 }
 .responsivebutton {
-	background: $darkcream;
+	background: $darkgray;
 	color: #FFF;
 	border: none;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	padding: 10px 20px;
 }
 .socialmedia {
@@ -123,13 +129,15 @@ $socialmedia-dimension: 40px;
 			display: inline-block;
 			a {
 				color: #FFF;
-				font-size: 1.2em;
+				font-size: 1em;
 				width: $socialmedia-dimension;
 				height: $socialmedia-dimension;
 				line-height: $socialmedia-dimension + 2;
-				&.fa-facebook { background: #009cff; &:hover { background: #FFF; color: #009cff; } }
-				&.fa-twitter { background: #54bfff; &:hover { background: #FFF; color: #54bfff; } }
-				&.fa-pinterest { background: #cf2929; &:hover { background: #FFF; color: #cf2929; } }
+				background: #FFF;
+				&.fa-facebook { color: #009cff; &:hover { background: #009cff; } }
+				&.fa-twitter { color: #54bfff; &:hover { background: #54bfff; } }
+				&.fa-pinterest { color: #cf2929; &:hover { background: #cf2929; } }
+				&:hover { color: #FFF; }
 			}
 		}
 	}
@@ -151,7 +159,7 @@ $socialmedia-dimension: 40px;
 .footer {
 	margin-top: 85px;
 	padding: 35px;
-	background: $darkcream;
+	background: $darkergray;
 	color: #FFF;
 	line-height: 22px;
 	img {
@@ -160,17 +168,18 @@ $socialmedia-dimension: 40px;
 		width: 100%;
 	}
 	input[type="text"] {
-		color: $darkercream;
+		color: $darkergray;
 		width: 100%;
-		border: solid 1px $darkercream;
+		border: none;
+		margin-bottom: 3px;
 		font-size: 0.8em;
 		padding: 5px;
 	}
 	textarea {
-		color: $darkercream;
+		color: $darkergray;
 		width: 100%;
 		font-family: Arial;
-		border: solid 1px $darkercream;
+		border: none;
 		font-size: 0.8em;
 		padding: 5px;
 		height: 80px;

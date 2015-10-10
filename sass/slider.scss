@@ -1,48 +1,67 @@
-@import 'inc.scss';
+@import 'properties.scss';
 
 
 .mi-slider {
 	position: relative;
 	margin-top: 30px;
 	height: 450px;
-	border-bottom: solid 5px #be6a00;
-	background: #FFF;
+	border-bottom: solid 5px $maroon + 65;
+	background: $maroon - 50;
 	ul {
 		list-style-type: none;
 		position: absolute;
 		width: 100%;
 		left: 0;
-		bottom: 35px;
+		bottom: 50px;
 		overflow: hidden;
 		text-align: center;
 		pointer-events: none;
 		padding: 0px;
 		li {
 			display: inline-block;
-			padding: 20px;
+			padding: 5px;
 			width: 20%;
 			max-width: 300px;
-			-webkit-transform: translateX(600%);
 			transform: translateX(600%);
-			-webkit-transition: opacity 0.2s linear;
+			-o-transform: translateX(600%);
+			-ms-transform: translateX(600%);
+			-moz-transform: translateX(600%);
+			-webkit-transform: translateX(600%);
 			transition: opacity 0.2s linear;
+			-o-transition: opacity 0.2s linear;
+			-ms-transition: opacity 0.2s linear;
+			-moz-transition: opacity 0.2s linear;
+			-webkit-transition: opacity 0.2s linear;
 			a {
+				@include transition();
 				display: block;
 				margin: 0 auto;
 				outline: none;
 				cursor: pointer;
+				color: #FFF;
 			}
 			img {
+				@include transition();
 				display: block;
 				margin: 0 auto;
 				max-width: 100%;
-				border: none;
+				border: solid 8px #FFF;
 			}
 			h4 {
 				display: inline-block;
 				padding-top: 20px;
 			}
-			&:hover { opacity: 0.7; }
+			&:hover {
+				img {
+					border-color: #F90;
+					transform: rotateX(20deg);
+					-o-transform: rotateX(20deg);
+					-ms-transform: rotateX(20deg);
+					-moz-transform: rotateX(20deg);
+					-webkit-transform: rotateX(20deg);
+				}
+				a { color: #F90; }
+			}
 		}
 		&.mi-current { pointer-events: auto; }
 	}
@@ -51,13 +70,14 @@
 		top: 0px;
 		text-align: center;
 		margin: 0 auto;
-		border-top: 5px solid #be6a00;
+		border-top: 5px solid $maroon + 65;
 		a {
 			display: inline-block;
+			padding: 40px 20px;
 			text-transform: uppercase;
-			padding: 40px 30px;
 			position: relative;
-			color: #888;
+			color: $green + 25;
+			font-weight: 600;
 			outline: none;
 			transition: color 0.2s linear;
 			-o-transition: color 0.2s linear;
@@ -65,10 +85,10 @@
 			-moz-transition: color 0.2s linear;
 			-webkit-transition: color 0.2s linear;
 			&:hover {
-				color: #F90;
+				color: #FFF;
 			}
 			&.mi-selected {
-				color: #F90;
+				color: $green + 100;
 				&:after {
 					content: '';
 					position: absolute;
@@ -79,7 +99,7 @@
 					position: absolute;
 					pointer-events: none;
 					border-color: transparent;
-					border-top-color: #e5ba85;
+					border-top-color: $lightestgray;
 					border-width: 20px;
 					left: 50%;
 					margin-left: -20px;
@@ -94,7 +114,7 @@
 					position: absolute;
 					pointer-events: none;
 					border-color: transparent;
-					border-top-color: #be6a00;
+					border-top-color: $maroon + 65;
 					border-width: 27px;
 					left: 50%;
 					margin-left: -27px;

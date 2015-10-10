@@ -1,9 +1,9 @@
-@import 'inc.scss';
+@import 'properties.scss';
 
 
 .responsiveslide {
-	margin-top: 50px;
-	margin-bottom: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	nav {
 		padding: 10px 20px;
 		text-align: center;
@@ -14,34 +14,37 @@
 			text-align: center;
 			color: #FFF;
 			display: inline-block;
-			background: $darkercream;
+			background: $maroon;
 			&:hover {
-				color: $darkercream;
-				background: #FFF;
+				color: #FFF;
+				background: $green;
 			}
 		}
 	}
 	.responsiveslide-image {
-		background: #FFF;
-		padding: 0px 10px 40px 10px;
-		border-top: solid 5px $darkcream;
-		border-bottom: solid 5px $darkcream;
+		background: $maroon - 50;
+		border-top: solid 5px $maroon + 65;
+		border-bottom: solid 5px $maroon + 65;
 		.responsiveslide-image-container {
 			@extend %nospace;
 			width: 300px;
-			height: 360px;
+			height: 620px;
 			overflow: hidden;
 			margin: auto;
 			position: relative;
 			text-align: center;
-			h4 { margin-bottom: 10px; }
-			img { max-width: 300px; max-height: 300px;}
+			h4 { margin-bottom: 20px; margin-top: 20px; color: #FFF; }
+			img {
+				max-width: 300px;
+				max-height: 300px;
+				border: solid 8px #FFF;
+			}
 			div {
 				@include transition(150ms);
 				position: absolute;
-				top: -400px;
+				top: -600px;
 				left: 0px;
-				&.show { top: 0px; @include transition(300ms); }
+				&.show { top: 20px; @include transition(300ms); }
 			}
 		}
 	}
