@@ -37,111 +37,109 @@ h4 { font-size: 1.1em; line-height: 1em; }
 
 
 
-// LOGO
-.logo {
-	padding: 50px 0px;
-	img {
-		margin: auto;
-		max-width: 275px;
+// HEADER
+.header {
+	background: url('../images/background.jpg') no-repeat top center;
+	padding-bottom: 30px;
+	// LOGO
+	.logo {
+		padding: 50px 0px;
+		img {
+			margin: auto;
+			max-width: 275px;
+		}
 	}
-}
-
-
-
-
-// RESPONSIVE MENU
-.responsivemenu {
-	@include transition();
-	height: 0px;
-	overflow: hidden;
-	ul {
-		@extend %nospace;
-		list-style: none;
-		padding: 0px 20px;
+	// RESPONSIVE MENU
+	.responsivemenu {
+		@include transition();
+		height: 0px;
+		overflow: hidden;
+		ul {
+			@extend %nospace;
+			list-style: none;
+			padding: 0px 20px;
+			text-align: center;
+			li {
+				a {
+					display: block;
+					color: #FFF;
+					background: $darkergray;
+					padding: 7px 0px;
+					margin-bottom: 2px;
+					&:hover {
+						color: $darkergray;
+						background: #FFF;
+					}
+				}
+			}
+		}
+	}
+	.responsivemenu.show {
+		height: 130px;
+	}
+	// MENU
+	$menu-height: 55px;
+	$socialmedia-dimension: 40px;
+	.menu {
 		text-align: center;
-		li {
-			a {
-				display: block;
-				color: #FFF;
-				background: $darkergray;
-				padding: 7px 0px;
-				margin-bottom: 2px;
-				&:hover {
-					color: $darkergray;
-					background: #FFF;
+		margin-bottom: 40px;
+		ul {
+			@extend %nospace;
+			list-style: none;
+			font-size: 0;
+			background: $darkgray;
+			max-width: 500px;
+			li {
+				font-size: 16px;
+				display: inline-block;
+				a {
+					display: block;
+					color: #FFF;
+					height: $menu-height;
+					line-height: $menu-height;
+					padding: 0px 25px;
+					&:hover {
+						padding: 0px 30px;
+						background: #FFF;
+						color: $maroon;
+						text-decoration: none;
+					}
 				}
 			}
 		}
 	}
-}
-.responsivemenu.show {
-	height: 130px;
-}
-
-
-
-
-// MENU
-$menu-height: 55px;
-$socialmedia-dimension: 40px;
-.menu {
-	text-align: center;
-	margin-bottom: 40px;
-	ul {
-		@extend %nospace;
-		list-style: none;
-		font-size: 0;
+	.responsivebutton {
 		background: $darkgray;
-		max-width: 500px;
-		li {
-			font-size: 16px;
-			display: inline-block;
-			a {
-				display: block;
-				color: #FFF;
-				height: $menu-height;
-				line-height: $menu-height;
-				padding: 0px 25px;
-				&:hover {
-					padding: 0px 30px;
+		color: #FFF;
+		border: none;
+		margin-bottom: 40px;
+		padding: 10px 20px;
+	}
+	.socialmedia {
+		text-align: center;
+		margin-bottom: 20px;
+		ul {
+			@extend %nospace;
+			list-style: none;
+			li {
+				display: inline-block;
+				a {
+					color: #FFF;
+					font-size: 1em;
+					width: $socialmedia-dimension;
+					height: $socialmedia-dimension;
+					line-height: $socialmedia-dimension + 2;
 					background: #FFF;
-					color: $maroon;
-					text-decoration: none;
+					&.fa-facebook { color: #009cff; &:hover { background: #009cff; } }
+					&.fa-twitter { color: #54bfff; &:hover { background: #54bfff; } }
+					&.fa-pinterest { color: #cf2929; &:hover { background: #cf2929; } }
+					&:hover { color: #FFF; }
 				}
 			}
 		}
 	}
 }
-.responsivebutton {
-	background: $darkgray;
-	color: #FFF;
-	border: none;
-	margin-bottom: 40px;
-	padding: 10px 20px;
-}
-.socialmedia {
-	text-align: center;
-	margin-bottom: 20px;
-	ul {
-		@extend %nospace;
-		list-style: none;
-		li {
-			display: inline-block;
-			a {
-				color: #FFF;
-				font-size: 1em;
-				width: $socialmedia-dimension;
-				height: $socialmedia-dimension;
-				line-height: $socialmedia-dimension + 2;
-				background: #FFF;
-				&.fa-facebook { color: #009cff; &:hover { background: #009cff; } }
-				&.fa-twitter { color: #54bfff; &:hover { background: #54bfff; } }
-				&.fa-pinterest { color: #cf2929; &:hover { background: #cf2929; } }
-				&:hover { color: #FFF; }
-			}
-		}
-	}
-}
+
 
 
 
@@ -210,18 +208,6 @@ $socialmedia-dimension: 40px;
 
 
 
-
-
-
-// MEDIA QUERY
-@media screen and (max-width: 770px){ 
-	.footer { .footer-socialmedia { li { display: inline-block; } } }
-}
-
-
-
-
-
 // OVERRIDE BOOTSTRAP
 .btn {
 	&.btn-danger {
@@ -229,4 +215,11 @@ $socialmedia-dimension: 40px;
 		border: none;
 		&:hover { background: #F90; }
 	}
+}
+
+
+
+// MEDIA QUERY
+@media screen and (max-width: 770px){ 
+	.footer { .footer-socialmedia { li { display: inline-block; } } }
 }
