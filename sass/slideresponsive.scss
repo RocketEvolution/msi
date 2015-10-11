@@ -28,23 +28,36 @@
 		.responsiveslide-image-container {
 			@extend %nospace;
 			width: 300px;
-			height: 620px;
+			height: 515px;
 			overflow: hidden;
 			margin: auto;
 			position: relative;
 			text-align: center;
 			h4 { margin-bottom: 20px; margin-top: 20px; color: #FFF; }
 			img {
+				@include transition();
 				max-width: 300px;
 				max-height: 300px;
 				border: solid 8px #FFF;
+				margin-bottom: 20px;
+				width: 100%;
+				&:hover {
+					transform: rotateX(20deg);
+					-o-transform: rotateX(20deg);
+					-ms-transform: rotateX(20deg);
+					-moz-transform: rotateX(20deg);
+					-webkit-transform: rotateX(20deg);
+					border: solid 8px #F90;
+				}
 			}
 			div {
 				@include transition(150ms);
 				position: absolute;
-				top: -600px;
+				top: -500px;
 				left: 0px;
-				&.show { top: 20px; @include transition(300ms); }
+				padding: 0px 20px;
+				opacity: 0;
+				&.show { top: 20px; @include transition(500ms); opacity: 1; }
 			}
 		}
 	}

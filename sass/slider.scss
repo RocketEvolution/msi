@@ -3,7 +3,7 @@
 
 .mi-slider {
 	position: relative;
-	height: 450px;
+	height: 410px;
 	border-bottom: solid 5px $maroon + 65;
 	background: $maroon - 50;
 	ul {
@@ -71,34 +71,27 @@
 		margin: 0 auto;
 		border-top: 5px solid $maroon + 65;
 		a {
+			@include transition();
 			display: inline-block;
 			padding: 40px 20px;
-			text-transform: uppercase;
 			position: relative;
-			color: $green + 25;
+			color: $green + 50;
 			font-weight: 600;
 			outline: none;
-			transition: color 0.2s linear;
-			-o-transition: color 0.2s linear;
-			-ms-transition: color 0.2s linear;
-			-moz-transition: color 0.2s linear;
-			-webkit-transition: color 0.2s linear;
-			&:hover {
-				color: #FFF;
-			}
+			&:hover { color: #FFF; }
 			&.mi-selected {
-				color: $green + 100;
+				color: $green + 130;
 				&:after {
 					content: '';
 					position: absolute;
 					top: -5px;
-					border: solid transparent;
 					height: 0;
 					width: 0;
 					position: absolute;
 					pointer-events: none;
+					border: solid transparent;
 					border-color: transparent;
-					border-top-color: $lightergray - 10;
+					border-top-color: $lightergray - 50;
 					border-width: 20px;
 					left: 50%;
 					margin-left: -20px;
@@ -107,11 +100,11 @@
 					content: '';
 					position: absolute;
 					top: -5px;
-					border: solid transparent;
 					height: 0;
 					width: 0;
 					position: absolute;
 					pointer-events: none;
+					border: solid transparent;
 					border-color: transparent;
 					border-top-color: $maroon + 65;
 					border-width: 27px;
@@ -311,52 +304,28 @@
 
 
 
+// MEDIA QUERY
+@media (min-width: 1200px) { // LG
 
-
-/*** MEDIA QUERY ***/
-@media screen and (max-width: 910px){
-	.mi-slider {
-		height: 340px;
-	}
-	.mi-slider nav a {
-		font-size: 12px;
-		padding: 40px 10px 30px 10px;
-	}
 }
-@media screen and (max-width: 740px){
+@media (min-width: 992px) and (max-width: 1199px) { // MD
 	.mi-slider {
-		height: 300px;
+		height: 350px;
+		ul { bottom: 40px; }
 	}
 	.mi-slider nav {
-		top: 0px;
+		a { padding: 40px 15px; }
 	}
 }
-@media screen and (max-width: 490px){ 
+@media (min-width: 768px) and (max-width: 991px) { // SM
 	.mi-slider {
-		text-align: center;
-		height: auto;
-	}
-	.mi-slider ul {
-		position: relative;
-		display: inline;
-		bottom: auto;
-		pointer-events: auto;
-	}
-	.mi-slider ul li {
-		-webkit-animation: none !important;
-		-moz-animation: none !important;
-		-ms-animation: none !important;
-		-o-animation: none !important;
-		animation: none !important;
-		-webkit-transform: translateX(0) !important;
-		-moz-transform: translateX(0) !important;
-		-ms-transform: translateX(0) !important;
-		-o-transform: translateX(0) !important;
-		transform: translateX(0) !important;
-		padding: 10px 3px;
-		min-width: 140px;
+		height: 320px;
+		ul { bottom: 30px; }
 	}
 	.mi-slider nav {
-		display: none;
+		a { padding: 40px 15px; }
 	}
+}
+@media (max-width: 767px) { // XS
+	
 }
